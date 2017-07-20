@@ -1,0 +1,43 @@
+>> plot(x,y,'r') %plots the graph of (x,y) in red colour
+
+>> hold on; %keeps the previous graph while plotting new one
+
+>> xlabel('time') %Sets the label for x-axis
+>> ylabel('y(t)') %Sets the label for Y-axis
+
+>> legend('sin','cos') %Displays the legend for sin & cos
+
+>> title('title') %Sets the title for the graph
+
+>> print -dpng 'myplot.png' %Prints a png of the graph
+>> % Might take a few seconds to complete
+
+>> close %closes the graph
+
+>> figure(1); %Plotting is done in the window 'Figure 1'
+
+>> subplot(1,2,1); %Divides plot into 1x2 grid & access first
+>> plot(x,y); %Plotted in the 1st half of the plotting window
+>> axis([0.5 1 -1 1]) %Sets x and y axes limits respectively
+
+>> clf; %Clears a figure
+
+>> imagesc(A) %Plots matrix A using colours instead of values
+
+>> imagesc(A), colorbar, colormap gray;
+%Executes three functions together with a B&W color map,
+a colourbar displaying the value each colour stands for.
+
+>> linspace(a,b); %generates vector of 100 points between a & b
+>> linspace(a,b,n); %generates vector of n points between a & b
+>> logspace(a,b); %50 logarithmically spaced points between 10^a & 10^b
+>> logspace(a,b,c); %logarithmically spaced c points between 10^a & 10^b
+>> logspace(a,pi); %logarithmically spaced points between 10^a & pi
+
+>> surf(x,y,z); %surface plot of x,y,z
+>> surf(x,y,z,c); %surface plot of x,y,z with surface colour c
+>> surf(z); %Surface plot of (row,column,z) as (x,y,z)
+>> surf(ax,__); %axes are specified by ax
+>> surf(__,'FaceAlpha',0.5) %semi-transparent surface property
+
+>> contour(x,y,z,v) %Plot contour lines for z using (x,y) and v as LevelListMode property

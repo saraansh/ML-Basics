@@ -1,0 +1,26 @@
+>> v = zeros(10,1);
+>> for i=1:10,
+>   v(i) = 2^i;
+>  end;
+>> %For statement to assign multiples of 2 to v
+>> %Similar for while loop and if, elseif and else statements
+>> %'continue' and 'break' statements can be used as well
+>> All control statements end with an end;
+>> After every condition place a comma(,)
+
+
+Save a squareThisNumber.m file with these lines of code:
+|function y = squareThisNumber(x)|
+|y = x^2                         |
+>> a = squareThisNumber(2)
+  a = 4
+
+You can also return multiple arguments at the same time:
+| function [a,b] = multi(c) |
+| a = c*c                   |
+| b = c*c*c                 |
+>> [x,y] = multi(5);
+>> x
+  x = 25;
+>> y
+  y = 125;
