@@ -1,0 +1,13 @@
+# Generating Random NP-array
+a = np.random.randn(100)
+
+# zip(a,b) function
+
+# xrange(integer) function
+
+# Obtaining current datetime
+from datetime import datetime
+time = datetime.now()
+
+# Converting time to seconds
+seconds = time.total_seconds()
