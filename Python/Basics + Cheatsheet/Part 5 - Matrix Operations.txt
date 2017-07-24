@@ -1,0 +1,30 @@
+import numpy as np
+
+# Element-wise Multiplication
+c = a * b
+
+# Matrix Dot/Inner Product
+c = a.dot(b)
+c = np.dot(a,b)
+
+# Matrix Outer Product
+c = np.outer(a,b)
+
+# Matrix Inverse
+Ainv = np.linalg.inv(A)
+
+# Identity Matrix (I = A.A')
+Iden = Ainv.dot(a)
+
+# Determinant of Matrix
+det = np.linalg.det(A)
+
+# Diagonal of matrix
+d = np.diag(a)
+
+# Diagonal matrix function is overloaded
+# to create a diagonal matrix as well as
+# retrieve diagonal values of a matrix.
+
+# Matrix Trace (Sum of Diagonal)
+mt = np.trace(a)
