@@ -1,0 +1,13 @@
+# To convert dataframe X to numpy array
+M = X.as_matrix()
+
+X[0] # Output the column[0] of the dataset
+M[0] # Output the row[0] of the dataset
+
+# Anything 1-D in pandas is Series
+type(X[0]) # Out: pandas.core.series.Series
+
+# Queries in X[]
+X[[0,2]] # Prints both columns(0 & 2)
+X[X[0]<5] # Prints all the rows in which column(0) < 5
+X[0] < 5 # Prints a 1-D array of True-False values
