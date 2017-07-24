@@ -1,0 +1,21 @@
+import numpy as np
+a = np.array([1,2])
+b = np.array([2,1])
+
+# Calculating Dot-Product
+dot = np.dot(a,b)
+dot = a.dot(b)
+
+# Calculating sum of elements
+sum = np.sum(a*b)
+sum = (a*b).sum()
+
+# The linalg.norm function
+amag = np.sqrt((a*a).sum())
+amag = np.linalg.norm(a)
+
+# Calculating cosine of angle b/w vector a & b
+cosangle = a.dot(b) / (np.linalg.norm(a) * np.linalg.norm(b))
+
+# Calculating angle b/w vector a & b
+angle = np.arccos(cosangle)
