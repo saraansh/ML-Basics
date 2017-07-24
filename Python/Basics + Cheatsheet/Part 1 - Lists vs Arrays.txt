@@ -1,0 +1,21 @@
+# Importing Numpy
+import numpy as np
+
+# Declaring a NP-array
+A = np.array([1,2,3])
+
+# Doubling Values
+A = 2 * A
+A = A + A
+
+# Squaring Values
+A = A ** 2
+
+# Square Root of Values
+A = np.sqrt(A)
+
+# Logarithm of Values
+A = np.log(A)
+
+# Exponent of Values
+A = np.exp(A)
