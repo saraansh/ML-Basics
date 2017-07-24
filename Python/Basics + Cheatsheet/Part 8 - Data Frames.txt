@@ -1,0 +1,16 @@
+# Importing the pandas library
+import pandas as pd
+
+# Reading CSV file
+X = pd.read_csv("data.csv",header=None)
+
+# Check the type of X
+type(X) # Out: pandas.core.frame.DataFrame
+
+# Detailed Information on X
+X.info()
+
+# Printing a few rows with row/col no.
+X.head()
+# Printing fixed set of rows with row/col no.
+X.head(10)
