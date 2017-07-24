@@ -1,0 +1,16 @@
+import numpy as np
+
+# Create an empty list
+X = []
+
+#Load data using for loop
+for line in open("data.csv"):
+  row = line.split(',')
+  sample = map(float,row)
+  X.append(sample)
+
+# COnvert list to an array
+X = np.array(X)
+
+# Check the dimensions to verify
+X.shape
