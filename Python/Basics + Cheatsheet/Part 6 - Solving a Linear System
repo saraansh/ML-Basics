@@ -1,0 +1,15 @@
+import numpy as np
+a = np.array([[1,2],[3.4]])
+b = np.array([1,2])
+
+# A.x = B (Multiply Ainv on both sides)
+# x = Ainv.B
+
+# Solving x via equation
+x = np.linalg.inv(A).dot(B)
+
+# Solving x using in-built function
+x = np.linalg.solve(A,b)
+
+# solve() is both more efficient and accurate
+# It is recommended never to use inv(A).
