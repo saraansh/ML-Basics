@@ -1,0 +1,13 @@
+import numpy as np
+
+# Vector is a 1-D numpy array
+# Matrix is a 2-D numpy array
+
+# Declaring a numpy array vs numpy matrix
+a = np.array([[1,2],[3,4]])
+m = np.matrix([[1,2],[3,4]])
+
+# The official python documentation
+# recommends against using numpy matrix
+# and converting it to a numpy array.
+a = np.array(m)
