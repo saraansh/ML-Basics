@@ -11,3 +11,12 @@ type(X[0]) # Out: pandas.core.series.Series
 X[[0,2]] # Prints both columns(0 & 2)
 X[X[0]<5] # Prints all the rows in which column(0) < 5
 X[0] < 5 # Prints a 1-D array of True-False values
+
+# Changing column names
+df.columns = ["column_1","Column_2"]
+
+# Return a column using column name
+df.coulmn_1 or df[column_1]
+
+# Adding a new column
+df['ones'] = 1 # Appends a column of ones.
