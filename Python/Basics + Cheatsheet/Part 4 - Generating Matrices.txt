@@ -18,7 +18,7 @@ g = np.random.randn(10,10)
 mean_g = g.mean()
 var_g = g.var()
 
-# For Gaussian, mean is nearly equal to 0.
+# For Gaussian, mean ~ 0 and variance ~ 1
 # Dimension sizes in Gaussian distribution are
 # passed as individual parameters while others
 # accept tuples of the dimension sizes.
