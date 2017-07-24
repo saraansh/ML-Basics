@@ -28,3 +28,18 @@ d = np.diag(a)
 
 # Matrix Trace (Sum of Diagonal)
 mt = np.trace(a)
+
+# Transpose of Matrix
+trans = a.transpose()
+
+# Covariance of Matrix
+X = np.random.randn(100,3) # No. of features = 3
+cov = np.cov(X)
+cov.shape # Gives (100,100) as the covariance shape
+# Since we need (3,3) as the covariance shape
+cov = np.cov(X.transpose())
+
+# Eigen Values/Vectors of Matrix
+e = np.linalg.eig(cov)
+# For Symmetric(A=A') and Hermitian Matrices
+eh = np.linalg.eigh(cov)
