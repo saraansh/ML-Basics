@@ -1,0 +1,27 @@
+import numpy as np
+
+# Generating zeros matrix
+z = np.zeros(10) #1-D Vector
+z = np.zeros((10,10)) #2-D Vector
+
+# Generating ones matrix
+o = np.ones((10,10))
+
+# Generating random matrix
+# Linearly distributed b/w 0 & 1
+r = np.random.random((10,10))
+
+# Gaussian Distribution b/w 0 & 1
+g = np.random.randn(10,10)
+
+# Mean & Variance of matrix
+mean_g = g.mean()
+var_g = g.var()
+
+# For Gaussian, mean is nearly equal to 0.
+# Dimension sizes in Gaussian distribution are
+# passed as individual parameters while others
+# accept tuples of the dimension sizes.
+
+# Diagonal Matrix
+d = np.diag([1,2]) #1 & 2 are diagonal elements
