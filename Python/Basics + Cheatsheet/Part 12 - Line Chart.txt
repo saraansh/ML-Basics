@@ -1,5 +1,5 @@
 # Importing matplotlib
-import matplotli.pyplot as plt
+import matplotlib.pyplot as plt
 
 # Linearly-spaced Points
 # Linspace(start, end, points-to-plot)
