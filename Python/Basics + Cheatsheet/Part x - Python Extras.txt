@@ -11,3 +11,7 @@ time = datetime.now()
 
 # Converting time to seconds
 seconds = time.total_seconds()
+
+# Converting string to datetime object
+datetime.strptime("2017-07", "%Y-%m")
+# Ouput: datetime.datetime(2015, 5, 1, 0, 0)
