@@ -1,0 +1,35 @@
+import pandas as pd
+
+# Importing the train.csv from large_files directory
+df = pd.read_csv("../large_files/train.csv")
+
+# The file is exceptionally large for a github repository
+# and can be downloaded from Kaggle via the link below:
+# https://www.kaggle.com/c/digit-recognizer/data
+# Kaggle is the famous hub for machine learning competitions
+# and requires you to login before downloading the data file.
+# The image is 28x28 pixels and thus df.shape returns (42000, 785)
+
+M = df.as_matrix()
+
+# The goal is to display all the images in the dataset.
+# The rows represent the different images.
+# Columns except column(0) defines the pixel colour.
+# Storing the 1st Image
+img = M[0,:1]
+
+# Set the Shape of Image
+img.shape # Gives (784,)
+img = img.reshape(28,28) #Give the image the requisite shape
+
+# Display the Image
+plt.imshow(img)
+plt.show()
+
+# Display the image in grayscale
+plt.imshow(img, cmap='Gray')
+plt.show()
+
+# To reverse the grayscale colors
+plt.imshow(255-img, cmap='gray')
+plt.show()
