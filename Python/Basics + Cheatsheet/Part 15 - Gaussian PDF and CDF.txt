@@ -1,0 +1,26 @@
+# Import scipy Library
+from scipy.stats import norm
+
+# Normal Gaussian Distribution function
+# with mean 0 and standard deviation 1
+norm.pdf(0)
+
+# Normal Gaussian Distribution Function
+# with mean 5 and standard deviation 10
+norm.pdf(0, loc=5, scale=10)
+
+import numpy as np
+r = np.random.randn(10)
+
+# Calculating all pdf values at the same time
+norm.pdf(r)
+
+# Calculating logpdf is less costly and
+# is preferred as a replacement for pdf
+norm.logpdf(r)
+
+# Calculation of cdf()
+norm.cdf(r)
+
+# Similarily calculation of logcdf()
+norm.logcdf()
