@@ -1,0 +1,25 @@
+# Importing matplotlib
+import matplotli.pyplot as plt
+
+# Linearly-spaced Points
+# Linspace(start, end, points-to-plot)
+x = np.linspace(0, 10, 10)
+
+# Calculating y = sin(x)
+y = np.sin(x)
+
+# Preparing the plot(x,y)
+plt.plot(x,y)
+
+# Adding Labels
+plt.xlabel("Time")
+plt.ylabel("Function of Time")
+
+# Adding Title
+plt.title("Line Chart")
+
+# Finally Display the Plot
+plt.show()
+
+# The more the number of points to plot,
+# the more refined is the graph plotted.
