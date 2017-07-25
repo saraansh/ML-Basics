@@ -1,0 +1,21 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+A = pd.read_csv('data.csv', header=None).as_matrix()
+
+x = A[:,0] # Stores column(0) in x
+y = A[:,1] # Stores column(1) in y
+
+# Scatter Plot is similar to linspace in terms of code.
+# Scatter Plot
+plt.scatter(x,y)
+plt.show()
+
+# Plotting a Histogram
+plt.hist(x)
+plt.show()
+
+# Histogram by default has 10 bins of data.
+# To change it, we can pass bins as a parameter:
+plt.hist(x, bins=20)
+plt.show() 
