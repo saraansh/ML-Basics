@@ -1,0 +1,16 @@
+import pandas as pd
+t1 = pd.read_csv('table1.csv')
+t2 = pd.read_csv('table2.csv')
+
+# Let table1 has the column names:
+# user_id, name, email, age
+# Let table2 has the column names:
+# user_id, emp_id, work_hours
+
+# Now to join, we use the common column name:
+
+# Method 1
+m = pd.merge(t1, t2, on='user_id')
+
+# Method 2
+m = t1.merge(t2, on='user_id')
