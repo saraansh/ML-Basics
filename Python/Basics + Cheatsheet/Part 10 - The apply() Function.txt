@@ -1,0 +1,12 @@
+# apply() function is used to add a column
+# with values dependent on other column(s).
+
+# Adding a col that is the product of 2 cols:
+
+# Method 1
+df['x3'] = df.apply(lambda row: row['x1'] * row['x2'], axis=1)
+
+# Method 2
+def get_interaction(row):
+  return row['x1'] * row['x2']
+df['x3'] = df.apply(get_interaction, axis=1)
