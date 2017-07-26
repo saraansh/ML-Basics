@@ -1,0 +1,53 @@
+# Scipy has many useful and interesting functions.
+# Here are some that may come in handy in the future ahead.
+# Read their documentation to learn how to implement them.
+
+# To load/parse MATLAB files
+scipy.io.loadmat()
+
+# To read/write WAV audio files
+scipy.io.wavefile.read()
+# Typical sampling rate is 44.1 Khz
+# that is 44.1K samples for each second of audio.
+
+# Signal Processing:
+  # Convolution is a popular function in signal processing.
+  # It is the technique used in neural networks.
+  # Scipy has multiple convolution functions.
+
+# For arbitrary signals of any size:
+scipy.signal.convolve()
+
+# For B/W images which are two dimensional:
+scipy.signal.convolve2d()
+
+# Scipy also has some interesting filtering functions.
+# For example, filters to generate echo or reverb effects.
+
+# Fast Fourier Transform (fft)
+# Signal processing function present in numpy and not scipy.
+# Converts signals from time-domain to frequency-domain.
+
+# Generating a Wave
+x = np.linspace(0, 100, 10000)
+y = np.sin(x) + np.sin(3*x) + np.sin(5*x)
+plt.plot(y)
+plt.show()
+
+# Applying Fast Fourier Transform
+Y = np.fft.fft(y)
+
+# Since the results are complex numbers
+# Plotting the absolute values of fft
+plt.plot(np.abs(Y))
+plt.show()
+
+# Zoom in on the peaks to see the waveform.
+# Notice the values for each peak 16, 48, 80 respectively.
+
+# Calculating the frequencies
+freq_1 = 2 * np.pi * 16/100
+freq_2 = 2 * np.pi * 48/100
+freq_3 = 2 * np.pi * 80/100
+
+# Output: freq_1 = 1, freq_2 = 3, freq_3 = 5 (approx.)
