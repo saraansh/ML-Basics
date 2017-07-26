@@ -1,0 +1,16 @@
+# Generating Random Gaussian Samples
+r = np.random.randn(10000)
+
+# Plotting histogram for the same
+plt.hist(r, bins=100)
+plt.show()
+
+# Scale it and add the mean (Std.Deviation=10 & Mean=5)
+r = 10*np.random.randn(10000) + 5
+
+# Note that this expression is just the reverse of
+# converting non-standard sample into a standard sample.
+
+# Histogram for the converted samples
+plt.hist(r, bins=100)
+plt.show()
