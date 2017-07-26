@@ -1,0 +1,21 @@
+# General Mutivariate Matrix
+# Dimensions aren't necessarily independent from each other.
+# This means we have a full covariance matrix.
+
+cov = np.array([[1,0.8], [0.8,3]])
+
+# Now we have a variance of 1 in the first dimension
+# and a variance of 3 in the second dimension and
+# the covariance between the two dimension is 0.8
+
+# Importing Multivariate-Normal Module
+from scipy.stats import multivariate_normal as mvn
+
+# Drawing samples from a Multivariate Normal Distribution
+mu = np.array([0,2])
+r = mvn.rvs(mean=mu, cov=cov, size=1000)
+
+# Plot Scatter-plot to verify
+plt.scatter(r[:,0], r[:,1])
+plt.axis('equal')
+plt.show()
