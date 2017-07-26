@@ -1,0 +1,22 @@
+# 2-D Circular Gaussian Distribution
+r = np.random.randn(10000, 2)
+
+# This is called a spherical gaussian because each
+# dimension is uncorrelated & independent of the other.
+
+# Circular Scatter Plot
+plt.scatter(r[:,0], r[:,1])
+plt.show()
+# (Match the X & Y scales to see the circle)
+# Alternatively we can scale it automatically
+plt.axis('equal')
+plt.show()
+
+# 2-D Elliptical Gaussian ditribution
+# Variance is different for each dimension
+r[:,1] = 5*r[:,1] + 2
+
+# Elliptical Scatter Plot
+plt.scatter([r:0], [r:1])
+plt.axis('equal')
+plt.show()
