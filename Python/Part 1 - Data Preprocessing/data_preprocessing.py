@@ -8,7 +8,7 @@ Created on Fri Jul 21 04:07:24 2017
 
 # Importing the libraries
 import numpy as np
-import matplotlib.pyplot as plot
+import matplotlib.pyplot as plt
 import pandas as pd
 
 # Importing dataset from CSV file
