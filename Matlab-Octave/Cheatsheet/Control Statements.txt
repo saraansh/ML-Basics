@@ -6,8 +6,11 @@
 >> %Similar for while loop and if, elseif and else statements
 >> %'continue' and 'break' statements can be used as well
 >> All control statements end with an end;
->> After every condition place a comma(,)
+>> After every condition place a comma(,) (Unnecessary)
 
+>> % Alternative way of using if statement
+>> % If value equals x, then assign value = y
+>> value(value==x) = y;
 
 Save a squareThisNumber.m file with these lines of code:
 |function y = squareThisNumber(x)|
