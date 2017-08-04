@@ -21,11 +21,13 @@ p = zeros(size(X, 1), 1);
 %       can use max(A, [], 2) to obtain the max for each row.
 %
 
-all_theta = (ones(num_labels), Theta1, Theta2);
-
-calc = sigmoid(X * all_theta');
+calc = [ones(size(X,1),1) X];
+calc = sigmoid(calc * Theta1');
+calc = [ones(size(calc,1),1) calc];
+calc = sigmoid(calc * Theta2');
 
 [onevsall,p] = max(calc, [], 2);
+
 
 % =========================================================================
 
