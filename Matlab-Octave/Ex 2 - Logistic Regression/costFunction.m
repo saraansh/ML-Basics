@@ -24,11 +24,14 @@ hypo = sigmoid(X * theta); %hypothesis
 calc = -(y .* log(hypo) + (1-y) .* log(1-hypo));
 J = (1/m) * sum(calc);
 
-for i = 1:m,
-    grad = grad + ((hypo(i) - y(i)) * X(i, :)');
-end
+% Using Loop
+% for i = 1:m,
+%     grad = grad + ((hypo(i) - y(i)) * X(i, :)');
+% end
+% grad = (1/m) * grad;
 
-grad = (1/m) * grad;
+% Using Vectorization
+grad = (1/m) * sum((hypo - y) .* X)';
 
 % =============================================================
 

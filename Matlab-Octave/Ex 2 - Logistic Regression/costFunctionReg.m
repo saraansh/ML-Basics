@@ -22,11 +22,15 @@ calc = -(y .* log(hypo) + (1-y) .* log(1-hypo));
 theta_sq = sum(theta(2:end).^2);
 J = (1/m) * sum(calc) + lambda/(2*m) * theta_sq;
 
-for i = 1:m,
-    grad = grad + ((hypo(i) - y(i)) * X(i, :)');
-end
+% Using Loop
+% for i = 1:m,
+%     grad = grad + ((hypo(i) - y(i)) * X(i, :)');
+% end
+% grad = (1/m) * grad + (lambda/m) * [0; theta(2:end)];
 
-grad = (1/m) * grad + (lambda/m) * [0; theta(2:end)];
+% Using Vectorization
+grad = (1/m) * sum((hypo - y) .* X)' + (lambda/m) * [0; theta(2:end)];
+
 
 % =============================================================
 
