@@ -37,10 +37,12 @@ grad = zeros(size(theta));
 %
 
 hypo = sigmoid(X * theta); %hypothesis
-calc = -(y .* log(hypo) + (1-y) .* log(1-hypo));
-J = (1/m) * sum(calc);
 
-grad = (1/m) * sum((hypo - y) .* X');
+calc = -(y .* log(hypo) + (1-y) .* log(1-hypo));
+theta_sq = sum(theta(2:end).^2);
+J = (1/m) * sum(calc) + lambda/(2*m) * theta_sq;
+
+grad = (1/m) * sum((hypo - y) .* X)' + (lambda/m) * [0; theta(2:end)];
 
 
 % =============================================================
