@@ -28,6 +28,12 @@ calc = sigmoid(calc * Theta2');
 
 [onevsall,p] = max(calc, [], 2);
 
+% if p == 10,
+%     p = 0;
+% end
+
+% Refer Cheatsheet - Control Statements
+p(p==10) = 0;
 
 % =========================================================================
 

@@ -33,6 +33,12 @@ X = [ones(m, 1) X];
 calc = sigmoid(X * all_theta');
 [onevsall,p] = max(calc, [], 2);
 
+% if p == 10,
+%     p = 0;
+% end
+
+% Refer Cheatsheet - Control Statements
+p(p==10) = 0;
 
 % =========================================================================
 
