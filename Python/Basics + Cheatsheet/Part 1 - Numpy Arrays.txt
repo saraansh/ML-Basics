@@ -1,4 +1,4 @@
-# Importing Numpy
+# Importing Numpy Library
 import numpy as np
 
 # Declaring a NP-array
