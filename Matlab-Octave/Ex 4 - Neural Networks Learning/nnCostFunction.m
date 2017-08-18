@@ -69,36 +69,40 @@ n = size(X,2);
 % Theta1 has size 25 x 401
 % Theta2 has size 10 x 26
 
-% Calculating a1, a2 & a3
-a1 = [ones(m,1) X];
-a2 = sigmoid(a1 * Theta1');
-a2 = [ones(size(a2,1),1) a2];
-a3 = sigmoid(a2 * Theta2');
+% Expand y to vector vec_y to contain 1 for each y(i)
+Y = zeros(size(y,1), num_labels);
+for i=1:m
+	Y(i,y(i,1)) = 1;
+end
+
+% Calculating a1, a2 & a3 (hypo)
+X = [ones(m,1) X];
+a1 = X;
+a2 = sigmoid(a1 * Theta1');    % 5000 x 25
+a2 = [ones(m,1) a2];    % 5000 x 26
+a3 = sigmoid(a2 * Theta2');    % 5000 x 10
 
 % Hypothesis for this neural network is given by a3
 hypo = a3;
 
-% Expand y to vector vec_y to contain 1 for each y(i)
-vec_y = zeros(m,num_labels);
-for i = 1:m
-  vec_y(i,y(i)) = 1;
-end
+% Calculating Cost Function (without Regularization)
+J = 1/m * sum(sum(-(Y .* log(hypo)) - ((1-Y) .* log(1 - hypo))));
 
-% Calculating Cost Function
-calc = -(vec_y .* log(hypo) + (1 - vec_y) .* log(1 - hypo));
-theta_sq = sum(sum(Theta1(2:end).^2)) + sum(sum(Theta2(2:end).^2));
-J = (1/m) * sum(sum(calc)) + (lambda/(2*m)) * theta_sq;
+% Applying Regularization
+reg = lambda/(2*m) * (sum(sum(Theta1(:,2:end).^2)) + sum(sum(Theta2(:,2:end).^2)));
+J += reg;
 
-% ==========================================================================
+% -------------------------------------------------------------
 
 % Part 2 - Backpropagation
 
-delta3 = a3 - vec_y;    % 5000x10
+delta3 = a3 - Y;    % 5000 x 10
 
 % Removing Bias
 Theta2 = Theta2(:,2:end);
 
-delta2 = Theta2' * delta3' .* sigmoidGradient(a1 * Theta1')' ;
+delta2 = Theta2' * delta3' .* sigmoidGradient(a1 * Theta1')';
+
 D1 = 1/m * delta2 * a1;    % 25x5000 * 5000x401
 D1(:,2:end) += lambda/m * Theta1(:,2:end);
 
@@ -111,6 +115,5 @@ Theta2_grad = D2;
 
 % Unroll gradients
 grad = [Theta1_grad(:) ; Theta2_grad(:)];
-
 
 end
