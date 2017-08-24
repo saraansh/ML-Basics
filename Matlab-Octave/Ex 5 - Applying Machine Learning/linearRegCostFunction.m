@@ -20,13 +20,13 @@ grad = zeros(size(theta));
 %
 
 hypo = X * theta;
-J = 1/(2 * m) * sum((hypo - y).^2)
-theta_sq = sum(theta(2:end) .^ 2) % Remember not to regularize theta-0
-reg_term = lambda/(2 * m) * theta_sq
-J += reg_term
+J = 1/(2 * m) * sum((hypo - y).^2);
+theta_sq = sum(theta(2:end) .^ 2); % Remember not to regularize theta-0
+reg_term = lambda/(2 * m) * theta_sq;
+J += reg_term;
 
 % Recall the equation we used in logistic regression
-grad = (1/m) * sum((hypo - y) .^ X)' + (lambda/m) * [0;theta(2:end)]
+grad = (1/m) * sum((hypo - y) .* X)' + (lambda/m) * [0;theta(2:end)];
 
 % =========================================================================
 
