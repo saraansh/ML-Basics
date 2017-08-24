@@ -54,9 +54,14 @@ error_val   = zeros(m, 1);
 % ---------------------- Sample Solution ----------------------
 
 for i = 1:m,
+  % Select xi = X(1:i, :)
   xi = X(1:i,:);
+  % Select yi = y(1:i)
   yi = y(1:i);
+  % Training to obtain theta for lambda = 0
   theta = trainLinearReg(xi, yi, lambda);
+  % Error calculation has no regularization term
+  % Thus lambda for error calculation is always zero
   [error_train(i), grad] = linearRegCostFunction(xi, yi, theta, 0);
   [error_val(i), grad] = linearRegCostFunction(Xval, yval, theta, 0);
 end
